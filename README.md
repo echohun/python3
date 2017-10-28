@@ -1,3 +1,3 @@
 java
 =========
-存放各种java小程序的仓库
+A repertory for java programs
