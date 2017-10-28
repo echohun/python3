@@ -1,3 +1,3 @@
 java
 =========
-A repertory for java programs
+A repository for java programs
