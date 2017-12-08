@@ -1,0 +1,25 @@
+import crypt
+
+
+def testpass(cryptpass):
+    salt = cryptpass[0:2]
+    dictfile = open('dic.txt','r')
+    for line in dictfile.readlines():
+        line = line.strip('\n')
+        cryptline = crypt.crypt(line,salt)
+        if (cryptline == cryptpass):
+            print ("[+] Found Password : "+ line + "\n")
+            return
+        print ("[-] Password Not Found.\n")
+        return
+
+def main():
+    passfile = open('pass.txt')
+    for line in passfile.readlines():
+        if ":" in line:
+            user = line.split(':')[0]
+            cryptpass = line.split(':')[1].strip('')
+            print ("[*] Cracking Password For : "+ user)
+            testpass(cryptpass)
+
+main()
