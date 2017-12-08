@@ -1,0 +1,22 @@
+from zipfile import *
+
+def extractfile(zfile, password):
+    try:
+        zfile.extractall(pwd = password)
+        print ("[+]"+password)
+        return password
+    except:
+        print ("[-]"+password)
+        return
+
+def main():
+    zfile = PyZipFile(r"C:\Users\leticia\desktop\dic.zip")
+    passfile = open(r"C:\Users\leticia\desktop\password.txt",'r')
+    for line in passfile.readlines():
+        password = line.strip('\n')
+        guess = extractfile(zfile,password)
+        if guess:
+            print ("The password is : "+password + "\n")
+            exit(0)
+
+main()
