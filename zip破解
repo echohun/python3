@@ -10,7 +10,7 @@ def extractfile(zfile, password):
         return
 
 def main():
-    zfile = PyZipFile(r"C:\Users\leticia\desktop\dic.zip")
+    zfile = PyZipFile(r"C:\Users\leticia\desktop\233.zip")
     passfile = open(r"C:\Users\leticia\desktop\password.txt",'r')
     for line in passfile.readlines():
         password = line.strip('\n')
